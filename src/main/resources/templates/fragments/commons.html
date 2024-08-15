@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Commons</title>
+</head>
+<body>
+
+<nav class="navbar bg-body-light fixed-top">
+  <div class="container-fluid">
+    <a class="brand-name h1 text-decoration-none animate__animated animate__backInLeft header" th:href="@{/}"><img class="logo" src="/icons/logo-image.png" alt="Sorry your browser doesn't support this image.">Chorapche.com</a>
+    <div class="cart-flex">
+      <a th:href="@{/cart}"><img class="cart-image" src="/icons/bag.png" alt=""></a>
+    </div>
+    <button class="navbar-toggler animate__animated animate__backInRight" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Добре дошли</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" th:href="@{/}">Начало</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/cart}">Кошница</a>
+          </li>
+          <li>
+            <a class="nav-link" th:href="@{/all-products}">Продукти</a>
+          </li>
+          <li>
+            <a class="nav-link" th:href="@{/about-us}">За нас</a>
+          </li>
+          <li>
+            <a class="nav-link" th:href="@{/reviews}">Мнения</a>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search" action="/search-results" method="GET">
+          <input class="form-control me-2" type="search" name="query" placeholder="Какво търсите?" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Търси...</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<footer>
+  <div class="footer">
+    <div class="row">
+      <a href="https://www.facebook.com/profile.php?id=61563891378010&locale=bg_BG"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/chorapche.com_/"><i class="fa fa-instagram"></i></a>
+    </div>
+
+    <div class="row">
+      <ul>
+        <li><a th:href="@{/contacts}">Контакти</a></li>
+        <li><a th:href="@{/privacy-policy}">Политика за поверителност</a></li>
+        <li><a th:href="@{/reviews}">Мнения</a></li>
+        <li><a th:href="@{/about-us}">За нас</a></li>
+      </ul>
+    </div>
+
+    <div class="row">
+    </div>
+    <small>&copy; 2024 Chorapche.com. All rights reserved.</small>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+body{
+  background-color: #fbfdfc;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Optional: change background color */
+  z-index: 9999; /* Ensure the loader is on top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader p{
+  font-size: large;
+  font-weight: bold;
+
+}
+.loader img {
+  width: 70px; /* Adjust based on your gif size */
+  height: 70px; /* Adjust based on your gif size */
+  margin-bottom: 5%;
+}
+
+/* Hide content initially */
+.everything-without-loader {
+  display: none;
+}
+.cont{
+  margin-top: 20%;
+  width: 80%;
+  margin-left: 10%;
+}
+.cont h3{
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+.next-step-btn {
+  border-radius: 4px;
+  background-color:#000000;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+}
+.product-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.product-cont{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+#delete-item {
+  position: relative;
+  text-decoration: none;
+  color: #333; /* Text color */
+  padding-bottom: 2px; /* Reduced padding to move underline closer */
+}
+
+#delete-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Position the underline closer to the text */
+  height: 1px; /* Thickness of the underline */
+  width: 0; /* Start with no underline */
+  background-color: #000; /* Underline color */
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+#delete-item:hover::after {
+  width: 100%; /* Expand to full width on hover */
+}
+
+.product-info{
+  display: flex;
+  flex-direction: row;
+  column-gap: 6vw;
+}
+#product-image{
+  height: 90px;
+  width: 90px;
+}
+.sub-main{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#total-value{
+  font-size: large;
+  font-weight: bold;
+}
+
+.next-step-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color: white;
+}
+
+.next-step-btn span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.next-step-btn:hover span {
+  padding-right: 25px;
+}
+
+.next-step-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+footer{
+  margin-top: 40%;
+}
+@media(max-width:1200px){
+  .product-info{
+    column-gap: 4vw;
+  }
+}
+@media(max-width:870px){
+  .product-info{
+    column-gap: 1.4vw;
+  }
+}
+@media(max-width:800px){
+  .product-info{
+    column-gap: 2vw;
+  }
+  .product-item h4{
+    font-size: 2.2vw;
+  }
+  .product-info{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #product-image{
+    height: 120px;
+    width: 120px;
+  }
+  #delete-item{
+    width: 40%;
+  }
+}
+@media(max-width:768px){
+    .cont{
+    margin-top: 25%;
+    margin-left: 10%;
+  }
+  footer{
+    margin-top: 60%;
+  }
+}
+@media(max-width:660px){
+  .cont{
+    margin-top: 30%;
+    margin-left: 10%;
+  }
+  footer{
+    margin-top: 70%;
+  }
+}
+@media(max-width:600px){
+  .product-item h4{
+    font-size: 3vw;
+  }
+  .product-item span{
+    font-size: 2.3vw;
+  }
+  .sub-main{
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    row-gap: 10px;
+    align-items: flex-start;
+  }
+}
+@media(max-width:500px){
+    .cont{
+    margin-top: 35%;
+    margin-left: 10%;
+  }
+  footer{
+    margin-top: 80%;
+  }
+  .product-item span{
+    font-size: 2.6vw;
+  }
+  #delete-item{
+    width: 50%;
+  }
+}
+@media(max-width:400px){
+    .cont{
+    margin-top: 40%;
+    margin-left: 10%;
+  }
+  footer{
+    margin-top: 100%;
+  }
+  .product-item h4{
+    font-size: 3.8vw;
+  }
+  #product-image{
+    height: 30vw;
+    width: 30vw;
+  }
+  .product-item{
+    column-gap: 5vw;
+  }
+  .product-item span{
+    font-size: 3.6vw;
+  }
+}
+@media(max-width:310px){
+  .cont{
+    margin-top: 45%;
+    margin-left: 10%;
+  }
+  footer{
+    margin-top: 120%;
+  }
+}
