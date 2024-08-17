@@ -18,8 +18,6 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/site.webmanifest").permitAll()  // Allow access to site.webmanifest
-                                .requestMatchers("/api/**").authenticated()  // Secure API endpoints// Apply security to specific endpoint
                                 .anyRequest().permitAll()  // Allow all other requests
                 )
                 .httpBasic(Customizer.withDefaults());  // Enable HTTP Basic Authentication

@@ -26,52 +26,52 @@ public class ProductServiceImpl implements ProductService {
              "Забавни чорапи с принт на пица",
              5.99,
              "/images/pizza-main.jpg",
-             5,6,7);
+             20,8,14);
      Product product2 =new Product("Чорапи с донъти",
              "Забавни чорапи с принт на донъти",
              5.99,
              "/images/donuts-main.jpg",
-             5,6,7);
+             20,8,14);
      Product product3 = new Product("Чорапи с кока-кола",
              "Забавни чорапи с принт на кока-кола",
              5.99,
              "/images/colas-main.jpg",
-             5,6,7);
+             20,8,14);
      Product product4 = new Product("Чорапи с бургери",
              "Забавни чорапи с принт на бургери",
              5.99,
              "/images/burgers-main.jpg",
-             5,6,7);
+             20,8,14);
      Product product5 = new Product("Чорапи с картофки",
              "Забавни чорапи с принт на картофки",
              5.99,
              "/images/fries-main.jpg",
-             5,6,7);
+             20,8,14);
      Product product6 = new Product("Чорапи с намигващо емоджи",
              "Забавни чорапи с принт на емоджи",
              4.99,
              "/images/wink-main.jpg",
-             5,6,7);
+             18,8,9);
      Product product7 = new Product("Чорапи с кеш емоджи",
              "Забавни чорапи с принт на емоджи",
              4.99,
              "/images/cash-main.jpg",
-             5,6,7);
+             18,8,9);
      Product product8 = new Product("Чорапи с очи",
              "Забавни чорапи с принт на емоджи",
              4.99,
              "/images/eyes-main.jpg",
-             5,6,7);
+             18,8,9);
      Product product9 = new Product("Чорапи с плачещо емоджи",
              "Забавни чорапи с принт на емоджи",
              4.99,
              "/images/crying-main.jpg",
-             5,6,7);
+             18,8,9);
      Product product10 = new Product("Чорапи с тъжно емоджи",
              "Забавни чорапи с принт на емоджи",
              4.99,
              "/images/sad-main.jpg",
-             5,6,7);
+             18,8,9);
 
 
      this.productRepository.saveAll(List.of(product1,

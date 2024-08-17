@@ -1,13 +1,12 @@
 package com.example.chorapche.controllers;
 
+
 import com.example.chorapche.exceptions.NotFoundException;
 import com.example.chorapche.model.dto.CartItemDTO;
 import com.example.chorapche.service.ProductService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import com.example.chorapche.model.entity.Product;
 
