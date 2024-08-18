@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/Chorapche.com-0.0.1-SNAPSHOT.jar Chorapche.com.jar
+COPY --from=build /target/com-0.0.1-SNAPSHOT.jar com.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","Chorapche.com.jar"]
