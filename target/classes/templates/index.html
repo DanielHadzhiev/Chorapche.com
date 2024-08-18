@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="loader" class="loader">
+  <p>Зареждане</p>
+  <img src="/icons/loader.gif" alt="Loading...">
+</div>
+
+<div class="everything-without-loader">
+  <div class="background">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/background1.png" class="carousel-image d-block w-100" alt="Sorry your brwoser doesn't support this image">
+        <div class="hidden-text carousel-caption">
+          <p>Вижте най-продаваните артикули:</p>
+        </div>
+        <div class="carousel-caption">
+          <p class="text">
+             Добре дошли в нашия уебсайт за най-яките чорапи!</p>
+            <div class="button-div">
+              <button onclick="scrollToContent()" type="button" class="scroll-spy-button">Най-продавани</button>
+            </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/background2.png" class="carousel-image d-block w-100" alt="Sorry your brwoser doesn't support this image">
+        <div class="hidden-text carousel-caption">
+          <p>Разгледайте всички артикули:</p>
+        </div>
+        <div class="carousel-caption">
+          <p class="text" >
+             Разгледайте всички налични артикули в нашия онлайн магазин:</p>
+            <form th:action="@{/all-products}" th:method="get" class="button-div">
+              <button type="submit" class="scroll-spy-button">Виж всички</button>
+            </form>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/background3.png" class="carousel-image d-block w-100" alt="Sorry your brwoser doesn't support this image">
+        <div class="hidden-text carousel-caption">
+          <p>Вижте мнения за нас:</p>
+        </div>
+        <div class="opinion-flex">
+        <div class="carousel-caption">
+          <p class="text">
+             Вижте мнения от други клиенти за нас:</p>
+            <form th:action="@{/reviews}" th:method="get" class="button-div">
+              <button type="submit" class="scroll-spy-button">Виж мнения</button>
+            </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <nav class="navbar bg-body-light fixed-top">
+        <div class="sliding-line">
+            <span class="line-text">Безплатна доставка при покупка над 30лв!</span>
+        </div>
+        <div class="container-fluid">
+            <a class="brand-name h1 text-decoration-none animate__animated animate__backInLeft header" th:href="@{/}"><img class="logo" src="/icons/logo-image.png" alt="Sorry your browser doesn't support this image.">Chorapche.com</a>
+            <div class="cart-flex">
+                <a th:href="@{/cart}"><img class="cart-image" src="/icons/bag.png" alt=""></a>
+            </div>
+            <button class="navbar-toggler animate__animated animate__backInRight" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Добре дошли</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/}">Начало</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/cart}">Кошница</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" th:href="@{/all-products}">Продукти</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" th:href="@{/about-us}">За нас</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" th:href="@{/reviews}">Мнения</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search" action="/search-results" method="GET">
+                        <input class="form-control me-2" type="search" name="query" placeholder="Какво търсите?" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Търси...</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<main class="content">
+  <div class="container">
+  <div class="best-sellers-flex">
+ <h1 class="best-sellers" style="margin-top: 0;
+ ">Най-продавани</h1>
+ <img class="pointer-image" src="/icons/pointer.png" alt="Sorry, your browser doesn't support the image.">
+</div>
+ <div class="container">
+  <div class="row">
+      <div class="card-container col-md-4">
+          <div class="card mb-4">
+              <img src="/images/pizza-main.jpg" class="card-img-top" alt="За съжаление браузъра ви не подържа тази снимка">
+              <div class="card-body">
+                  <h5 class="card-title" >Чорапи с пица</h5>
+                  <p class="card-text">Забавни чорапи с принт на пица</p>
+                  <p class="price-line">Цена: <span class="price">5.99</span>лв</p>
+                  <!-- Generate a URL with a path variable -->
+                  <a th:href="@{/product-details/{productName}(productName='Чорапи с пица')}"  class="product-button btn btn-outline-dark">Виж продукта</a>
+              </div>
+          </div>
+      </div>
+
+    <div class="card-container col-md-4">
+      <div class="card mb-4">
+        <img src="/images/cash-main.jpg" class="card-img-top" alt="За съжаление браузъра ви не подържа тази снимка">
+        <div class="card-body">
+          <h5 class="card-title">Чорапи с кеш емоджи</h5>
+          <p class="card-text">Забавни чорапи с принт на емоджи</p>
+          <p class="price-line">Цена: <span class="price">4.99</span>лв</p>
+          <a th:href="@{/product-details/{productName}(productName='Чорапи с кеш емоджи')}" class="product-button btn btn-outline-dark">Виж продукта</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container col-md-4">
+      <div class="card mb-4">
+        <img src="/images/donuts-main.jpg" class="card-img-top" alt="За съжаление браузъра ви не подържа тази снимка">
+        <div class="card-body">
+          <h5 class="card-title">Чорапи с донъти</h5>
+          <p class="card-text">Забавни чорапи с принт на донъти</p>
+          <p class="price-line">Цена: <span class="price">5.99</span>лв</p>
+          <a  th:href="@{/product-details/{productName}(productName='Чорапи с донъти')}" class="product-button btn btn btn-outline-dark">Виж продукта</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-us">
+  <div class="about-us-text">
+    <h1>Накратко-за нас:</h1>
+<p>
+  Добре дошли в Chorapche.com - вашето място за качествени чорапи онлайн! Ние предлагаме широка гама от стилни и удобни чорапи за всеки повод. Нашият екип се стреми да ви предостави най-добрите продукти на пазара, съчетавайки качество, комфорт и модерен дизайн. Независимо дали търсите ежедневни чорапи, спортни модели или нещо по-елегантно, в Chorapche.com ще намерите всичко, което ви трябва. Благодарим ви, че избрахте нас за вашия доверен доставчик на чорапи!</p>
+</div>
+  <div class="d-flex" style="height: 200px;">
+    <div style="color: gray;" class="vr"></div>
+  </div>
+  <form th:action="@{/about-us}" th:method="get" class="about-us-button">
+<button class="more-button" type="submit" ><span class="text-more">Повече...</span><span>за нас</span></button>
+  </form>
+</div>
+</div>
+
+  <footer th:replace="~{fragments/commons::footer}"></footer>
+</main>
+  <div id="myAlert" class="alert alert-success d-none d-flex align-items-center mt-3" role="alert">
+    <img class="success-image" src="/images/success.png" alt="Success">
+    <div>
+      Успешно добавен продукт!
+    </div>
+  </div>
+</div>
+
+
+<script src="/scripts/loader.js"></script>
+<script src="/scripts/free-delivery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Scroll to the content as soon as the DOM is loaded
+      scrollToContent();
+
+      // Proceed with handling the alert message
+      handleAlertMessage();
+    });
+
+    function scrollToContent() {
+      const contentElement = document.querySelector('.content');
+      if (contentElement) {
+        contentElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.error('Content element not found');
+      }
+    }
+
+    function handleAlertMessage() {
+      // Check if the alert message is present
+      const alertMessage = [[${alertMessage}]]; // Thymeleaf syntax
+      if (alertMessage) {
+        const alert = document.getElementById('myAlert');
+        if (alert) {
+          alert.classList.remove('d-none');
+          alert.classList.add('fade-in');
+
+          // Fade out the alert after 4 seconds
+          setTimeout(() => {
+            alert.classList.remove('fade-in');
+            alert.classList.add('fade-out');
+            setTimeout(() => {
+              alert.classList.add('d-none');
+              alert.classList.remove('fade-out');
+            }, 500); // Match this time with the duration of your fade-out animation
+          }, 4000); // Show alert for 4 seconds
+        } else {
+          console.error('Alert element not found');
+        }
+      }
+
+    }
+  </script>
+</body>
+</html>

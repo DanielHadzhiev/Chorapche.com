@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Чорапи с котки",
+    "description": "Памучни чорапи с принт на котки",
+    "price": "5.99",
+    "image": "/images/cat-socks.jpg"
+  },
+  {
+    "name": "Спортни чорапи",
+    "description": "Дишащи спортни чорапи",
+    "price": "7.99",
+    "image": "/images/sport-socks.jpg"
+  },
+  {
+    "name": "Чорапи с авокадо",
+    "description": "Забавни чорапи с принт на авокадо",
+    "price": "6.99",
+    "image": "/images/avocado-socks.jpg"
+  },
+  {
+    "name": "Чорапи с авокадо",
+    "description": "Весели чорапи с различни емотикони",
+    "price": "8.99",
+    "image": "/example-images/seat-cover.png"
+  }
+]
