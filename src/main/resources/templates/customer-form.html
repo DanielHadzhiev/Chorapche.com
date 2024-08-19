@@ -83,7 +83,7 @@
       <p>*доставката отнема от 1-3 работни дни</p>
 
       <div class="button-cost">
-        <button class="next-step-btn"><span>Плащане с наложен платеж
+        <button id="trimButton" class="next-step-btn"><span>Плащане с наложен платеж
         </span></button>
         <p id="total-value">Общо: <span th:text="${totalCost}">0.00</span>лв<span  th:if="${totalCost <= 30}"  style="font-size: small;
          font-weight: 400;
@@ -101,5 +101,21 @@
 </div>
 <script src="/scripts/loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+  // Function to trim input fields by class name
+  function trimFieldsByClassName() {
+    // Get all elements with the class name 'trimField'
+    const fields = document.getElementsByClassName('form-control');
+
+    // Convert the HTMLCollection to an array and loop through each element
+    Array.from(fields).forEach(function(field) {
+      // Trim the value and set it back to the input field
+      field.value = field.value.trim();
+    });
+  }
+
+  // Add event listener to the button
+  document.getElementById('trimButton').addEventListener('click', trimFieldsByClassName);
+</script>
 </body>
 </html>
