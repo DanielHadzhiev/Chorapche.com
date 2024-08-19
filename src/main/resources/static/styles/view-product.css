@@ -568,7 +568,20 @@ footer{
         margin-left: 10%;
     }
 }
+@media (max-width:370px){
+    .modal-content{
+        width: 90%;
+
+    }
+    .help-flex h2{
+        font-size: 1rem;
+    }
+    .help-flex h4{
+        font-size: 1rem;
+    }
+}
 @media(max-width:360px){
+
     .carousel{
         width: 70%;
     }
