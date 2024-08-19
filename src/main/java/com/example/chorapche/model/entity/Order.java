@@ -1,7 +1,6 @@
 package com.example.chorapche.model.entity;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,46 +8,46 @@ import java.util.List;
 @Table(name = "orders")
 public class Order {
 
-    public Order() {
-        this.cartItems =new ArrayList<>();
-    }
-
     @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-@Column(name = "first_second_name"
-        ,nullable = false)
-    private String FirstSecondName;
+    @Column(name = "first_second_name", nullable = false)
+    private String firstSecondName;
 
-@Column(name = "address"
-        ,nullable = false
-        ,columnDefinition = "TEXT")
+    @Column(name = "address", nullable = false, columnDefinition = "TEXT")
     private String address;
 
-@Column(name = "email")
+    @Column(name = "email")
     private String email;
 
-@Column(name = "phone_number")
-private String phoneNumber;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-@OneToMany()
- private List<CartItem> cartItems;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "orders_cart_items",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "cart_item_id")
+    )
+    private List<CartItem> cartItems = new ArrayList<>();
+
+    // Getters and Setters
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
     public String getFirstSecondName() {
-        return FirstSecondName;
+        return firstSecondName;
     }
 
     public void setFirstSecondName(String firstSecondName) {
-        FirstSecondName = firstSecondName;
+        this.firstSecondName = firstSecondName;
     }
 
     public String getAddress() {
@@ -67,6 +66,14 @@ private String phoneNumber;
         this.email = email;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public List<CartItem> getCartItems() {
         return cartItems;
     }
@@ -75,11 +82,5 @@ private String phoneNumber;
         this.cartItems = cartItems;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 }
+

@@ -1,7 +1,7 @@
 package com.example.chorapche.model.entity;
 
 import jakarta.persistence.*;
-
+import java.util.List;
 
 @Entity
 @Table(name = "cart_items")
@@ -14,15 +14,28 @@ public class CartItem {
     @ManyToOne(fetch = FetchType.EAGER)
     private Product product;
 
-    @Column(name = "quantity",nullable = false)
+    @Column(name = "quantity", nullable = false)
     private int quantity;
+
+    @ManyToMany(mappedBy = "cartItems")
+    private List<Order> order;
+
+    // Getters and Setters
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public List<Order> getOrder() {
+        return order;
+    }
+
+    public void setOrder(List<Order> order) {
+        this.order = order;
     }
 
     public Product getProduct() {
@@ -41,5 +54,3 @@ public class CartItem {
         this.quantity = quantity;
     }
 }
-
-

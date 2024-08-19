@@ -32,19 +32,22 @@ public class OrderServiceImpl implements OrderService {
     public void addOrder(OrderInfoDTO orderInfoDTO) {
         Order order = new Order();
 
-        saveCartItems(this.currentOrder.getCartItemList());
-
-        order.setCartItems(this.currentOrder.getCartItemList());
+        // Set order details
+        order.setFirstSecondName(orderInfoDTO.getFirstName() + " " + orderInfoDTO.getSecondName());
         order.setAddress(orderInfoDTO.getAddress());
         order.setEmail(orderInfoDTO.getEmail());
         order.setPhoneNumber(orderInfoDTO.getPhoneNumber());
-        order.setFirstSecondName(orderInfoDTO.getFirstName()+" "+orderInfoDTO.getSecondName());
 
+        // Ensure that cart items are associated with the order
+        List<CartItem> cartItems = this.currentOrder.getCartItemList();
+        order.setCartItems(cartItems);
+
+        // Save the order, which will also save the associated cart items
         this.orderRepository.save(order);
-
     }
 
-    private void saveCartItems(List<CartItem>cartItems){
-       this.cartItemRepository.saveAll(cartItems);
+    private void saveCartItems(List<CartItem> cartItems) {
+        this.cartItemRepository.saveAll(cartItems);
     }
+
 }
