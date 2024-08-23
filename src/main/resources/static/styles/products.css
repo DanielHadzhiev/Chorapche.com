@@ -123,7 +123,17 @@ main {
   padding: 5%;
 }
 
+.amatic-sc-bold {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 .main-content-text h1 {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #000000;
@@ -282,6 +292,11 @@ main {
     margin-bottom: 10%;
   }
 }
+@media(max-width:580px){
+  .content-container {
+    margin-top: 30%;
+  }
+  }
 @media(max-width:550px){
   .product-card{
     margin-left: 5%;
